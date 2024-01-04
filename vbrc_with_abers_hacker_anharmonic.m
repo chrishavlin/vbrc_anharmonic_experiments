@@ -64,7 +64,7 @@ VBR = VBR_spine(VBR);
 %%%%%%%%%%%%
 
 % plot log10(Q) for a single frequency
-figure()
+figure('Position', [10 10 1210 610]) % [x y width height]
 subplot(1,2,1)
 contourf(T_K_1d, P_GPa_1d, log10(squeeze(VBR.out.anelastic.eburgers_psp.Q(:,:,end))))
 
@@ -84,14 +84,14 @@ ylabel("Pressure [GPa]")
 title("log10(Q), andrade pseudo-period (JF10)")
 set(findall(gcf,'-property','FontSize'),'FontSize',18)
 
-figure()
+figure('Position', [30 30 630 430]) % [x y width height]
 iT = numel(T_K_1d);
 iP = numel(P_GPa_1d);
 f = VBR.in.SV.f;
 semilogx(f, squeeze(VBR.out.anelastic.andrade_psp.M(iP, iT, :)/1e9), 'k','displayname', 'andrade', 'linewidth',1.5)
 hold all
 semilogx(f, squeeze(VBR.out.anelastic.eburgers_psp.M(iP, iT, :)/1e9),'--r', 'displayname', 'eburgers', 'linewidth',1.5)
-legend('location', 'NorthWest')
+legend('location', 'NorthWest', 'Box', 'off')
 xlabel('frequency [Hz]')
 ylabel('M [GPa]')
 title('1500 C, 4 GPa')
