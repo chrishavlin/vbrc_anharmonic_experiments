@@ -8,7 +8,7 @@ There are two `.m` files:
 * `vbrc_with_abers_hacker_anharmonic.m` : the main script 
 * `calculate_unrelaxed_moduli_density.m` : a function for calculating moduli and density (where the Abers & Hacker calculation happens).
 
-For a more detailed description, see the blog post [here]().
+For a more detailed description, see the blog post [here](https://chrishavlin.github.io/post/vbrc_moduli/).
 
 ## Requirements & Setup 
 
